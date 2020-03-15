@@ -1,7 +1,7 @@
 package main
 
 import (
-	//"math"
+	"math"
 	"strings"
 )
 
@@ -27,17 +27,23 @@ func IsNumeral(s string) bool {
 	}
 }
 
-// func StrToInt(str string) int {
-// 	var result int
-// 	for i := 0; i < len(str); i++ {
-// 		result += CharToInt(str[i]) * math.Pow10(len(str)-i-1)
-// 	}
-// }
+func StrToInt(str string) int {
 
-// func CharToInt (ch string) int {
-// 	if ch== {
-// 		return 1
-// 	} else {
-// 		return int(ch - '0')
-// 	}
-// }
+	var result int
+
+	if str == "_" {
+		return 1
+	} else {
+		slice := []byte(str)
+		slice = append(slice[:0], slice[1:]...) // delete first element
+		for i := 0; i < len(slice); i++ {
+			result += CharToInt(slice[i]) * int(math.Pow10(len(slice)-i-1))
+		}
+		return result
+	}
+
+}
+
+func CharToInt(ch byte) int {
+	return int(ch - '0')
+}

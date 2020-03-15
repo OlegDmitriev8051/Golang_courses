@@ -5,20 +5,38 @@ import (
 	"math"
 )
 
+func StrToInt(str string) int {
+
+	var result int
+
+	if str == "_" {
+		return 1
+	} else {
+		slice := []byte(str)
+		slice = append(slice[:0], slice[1:]...) // delete first element
+		for i := 0; i < len(slice); i++ {
+			result += CharToInt(slice[i]) * int(math.Pow10(len(slice)-i-1))
+		}
+		return result
+	}
+
+}
+
+func CharToInt(ch byte) int {
+	return int(ch - '0')
+}
+
 func main() {
-	// 	const str string = "As23_ , .?Dsd32fj" // testing string
-	// 	var n string                           //storage for the current number
+	var n string = "_1231932032902"
+	var n1 string = "_"
 
-	// 	for _, v := range str {
+	var a int
+	var b int
 
-	// 		if IsNumeral(string(v)) {
-	// 			n += string(v)
-	// 		}
-	// 		if !IsNumeral(string(v)) {
-	// 			fmt.Printf("%v", n)
-	// 			n = ""
-	// 		}
+	a = StrToInt(n)
+	b = StrToInt(n1)
 
-	// 	}
-	fmt.Println(math.Pow10(3))
+	fmt.Println(a)
+	fmt.Println(b)
+
 }
