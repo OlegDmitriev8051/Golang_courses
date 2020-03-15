@@ -6,16 +6,16 @@ import (
 	"strings"
 )
 
-func IsLetter(s string) bool {
+// func IsLetter(s string) bool {
 
-	const symb string = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtVvUuWwXxYyZz"
+// 	const symb string = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtVvUuWwXxYyZz"
 
-	if strings.ContainsAny(symb, s) {
-		return true
-	} else {
-		return false
-	}
-}
+// 	if strings.ContainsAny(symb, s) {
+// 		return true
+// 	} else {
+// 		return false
+// 	}
+// }
 
 func IsNumeral(s string) bool {
 

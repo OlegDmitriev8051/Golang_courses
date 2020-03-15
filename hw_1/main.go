@@ -1,12 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	//"os"
+)
 
 func main() {
-	const s string = "_ab_3c2d10e_2" // testing string
-	var l string = string(s[0])      //storage for the current letter
-	var n string = "_"               //storage for the current number
+	const s string = "a"        // testing string
+	var l string = string(s[0]) //storage for the current letter
+	var n string = "_"          //storage for the current number
 
+	// if IsNumeral(string(s[0])) {
+
+	// }
 	for i := 0; i < len(s); i++ {
 
 		/* if this is the last element, then s[i+1] will break the program,
