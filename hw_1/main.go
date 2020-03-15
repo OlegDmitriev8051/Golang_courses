@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	const s string = "abc2d10e" // testing string
-	var l string = string(s[0]) //storage for the current letter
-	var n string = "_"          //storage for the current number
+	const s string = "_ab_3c2d10e_2" // testing string
+	var l string = string(s[0])      //storage for the current letter
+	var n string = "_"               //storage for the current number
 
 	for i := 0; i < len(s); i++ {
 
@@ -13,7 +13,7 @@ func main() {
 		so another algorithm is used for this iteration*/
 
 		if i == len(s)-1 {
-			if IsLetter(string(s[i])) {
+			if !IsNumeral(string(s[i])) {
 				fmt.Printf(string(s[i]))
 			} else {
 				if IsNumeral(string(s[i])) {
@@ -27,24 +27,24 @@ func main() {
 
 			/* for all iterations except the last */
 		} else {
-			if IsLetter(string(s[i])) {
+			if !IsNumeral(string(s[i])) {
 				l = string(s[i])
 			} else {
 				if IsNumeral(string(s[i])) {
 					n += string(s[i])
 				} else {
 					fmt.Printf("%v", string(s[i]))
-					continue
+
 				}
 
 			}
 		}
 
-		if IsLetter(string(s[i+1])) {
+		if !IsNumeral(string(s[i+1])) {
 			PrintLetter(StrToInt(n), l)
 			n = "_"
 		}
 
 	}
-
+	fmt.Println()
 }
