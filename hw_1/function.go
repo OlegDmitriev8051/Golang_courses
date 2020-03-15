@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"math"
 	"strings"
 )
@@ -46,4 +47,10 @@ func StrToInt(str string) int {
 
 func CharToInt(ch byte) int {
 	return int(ch - '0')
+}
+
+func PrintLetter(n int, l string) {
+	for i := 0; i < n; i++ {
+		fmt.Printf("%v", l)
+	}
 }
