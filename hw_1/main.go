@@ -1,47 +1,34 @@
 package main
 
+import "fmt"
+
 func main() {
-	
-str := "a4bc2d10e"	
-var slc [] string
-var ch string
-var q int // quantity of repeated chars
+	const str string = "abc2d10e" // testing string
+	var l string                  //storage for the current letter
+	var n string                  //storage for the current number
 
-// if incpection first symbol	
-for i,v := range str {
-	if (str [i] < '0') || (str [i] > '9') { // if str[i] is not a number
-		if i != 1 {// if it isn`t first iterration
-			slc := append(slc, ch)
-		}
-		ch = v
-	}else {
-		q += v
+	if !IsLetter(string(str[0])) {
+		fmt.Println("Error!First symbol isn`t correct")
 	}
-}	
-} 
-	
-	
-	
-	
-	
-	
-	
-	/*type pair struct{
-		i string
-		s string
-	}
-	test := []pair{
-		{"a4bc2d5e","aaaabccddddde"},
-		{"abcd","abcd"},
-		{"45",""},
 
-	}
-	for _, t := range test {
-		if t.s == !!!(t.i) {
-		   fmt.Printf("%d - %s\n", t.i, "OK")
+	l = string(str[0])
+
+	for i := 1; i < len(str); i++ {
+
+		if IsLetter(string(str[i])) {
+			// fmt.Println(l, n, "time(s)")
+			// n = ""
+			l = string(str[i])
 		} else {
-		   fmt.Printf("%d - %s\n", t.i, "FAIL")
+			if IsNumeral(string(str[i])) {
+				n += string(str[i])
+			}
 		}
-	 }
- }*/
+
+		// if IsLetter(string(str[i+1])) {
+		// 	fmt.Println(n, "*", l)
+		// 	n = ""
+		// }
+	}
+
 }

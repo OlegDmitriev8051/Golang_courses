@@ -1,39 +1,24 @@
 package main
 
-// test brunch
 import (
 	"fmt"
-	"strings"
+	"math"
 )
 
 func main() {
+	// 	const str string = "As23_ , .?Dsd32fj" // testing string
+	// 	var n string                           //storage for the current number
 
-	const str string = "0aDV2a55DSD6xz7v809z"
+	// 	for _, v := range str {
 
-	const symb string = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtVvUuWwXxYyZz"
+	// 		if IsNumeral(string(v)) {
+	// 			n += string(v)
+	// 		}
+	// 		if !IsNumeral(string(v)) {
+	// 			fmt.Printf("%v", n)
+	// 			n = ""
+	// 		}
 
-	const num string = "0123456789"
-
-	var slc []string
-
-	// transform strToInt
-	// for _, v := range str {
-	// 	fmt.Println(int(v - '0'))
-	// }
-
-	// isLetter
-	// for _, v := range str {
-	// 	if strings.ContainsAny(symb, string(v)) {
-	// 		fmt.Printf("%v\n", string(v))
 	// 	}
-	// }
-
-	// isNumerical
-	for _, v := range str {
-		if strings.ContainsAny(num, string(v)) {
-			slc = append(slc, string(v))
-		}
-	}
-	fmt.Printf("%v\n", slc)
-
+	fmt.Println(math.Pow10(3))
 }
