@@ -9,9 +9,9 @@ import (
 )
 
 func main() {
-	const s string = "! ds5d4"  // testing string
-	var l string = string(s[0]) //storage for the current letter
-	var n string = "_"          //storage for the current number
+	const s string = "gJd8SA0!3" // testing string
+	var l string = string(s[0])  //storage for the current letter
+	var n string = "_"           //storage for the current number
 
 	// if IsNumeral(string(s[0])) {
 
