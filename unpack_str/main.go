@@ -10,14 +10,10 @@ func main() {
 	var l string = string(s[0])  //storage for the current letter
 	var n string = "_"           //storage for the current number
 
-	// if IsNumeral(string(s[0])) {
-
-	// }
 	for i := 0; i < len(s); i++ {
 
 		/* if this is the last element, then s[i+1] will break the program,
 		so another algorithm is used for this iteration*/
-
 		if i == len(s)-1 {
 			if !f.IsNumeral(string(s[i])) {
 				fmt.Printf(string(s[i]))
@@ -46,6 +42,8 @@ func main() {
 			}
 		}
 
+		/* if there is a letter after the digit,
+		   then print the previous letter */
 		if !f.IsNumeral(string(s[i+1])) {
 			f.PrintLetter(f.StrToInt(n), l)
 			n = "_"
