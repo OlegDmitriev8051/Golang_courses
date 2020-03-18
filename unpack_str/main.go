@@ -1,11 +1,8 @@
 package main
 
-//package hw_1
-
 import (
 	"fmt"
-
-	. "github.com/OTUS/unpack_str/functions"
+	f "github.com/OTUS/unpack_str/functions"
 )
 
 func main() {
@@ -22,12 +19,12 @@ func main() {
 		so another algorithm is used for this iteration*/
 
 		if i == len(s)-1 {
-			if !IsNumeral(string(s[i])) {
+			if !f.IsNumeral(string(s[i])) {
 				fmt.Printf(string(s[i]))
 			} else {
-				if IsNumeral(string(s[i])) {
+				if f.IsNumeral(string(s[i])) {
 					n += string(s[i])
-					PrintLetter(StrToInt(n), l)
+					f.PrintLetter(f.StrToInt(n), l)
 				} else {
 					fmt.Printf("%v", string(s[i]))
 				}
@@ -36,10 +33,10 @@ func main() {
 
 			/* for all iterations except the last */
 		} else {
-			if !IsNumeral(string(s[i])) {
+			if !f.IsNumeral(string(s[i])) {
 				l = string(s[i])
 			} else {
-				if IsNumeral(string(s[i])) {
+				if f.IsNumeral(string(s[i])) {
 					n += string(s[i])
 				} else {
 					fmt.Printf("%v", string(s[i]))
@@ -49,8 +46,8 @@ func main() {
 			}
 		}
 
-		if !IsNumeral(string(s[i+1])) {
-			PrintLetter(StrToInt(n), l)
+		if !f.IsNumeral(string(s[i+1])) {
+			f.PrintLetter(f.StrToInt(n), l)
 			n = "_"
 		}
 
