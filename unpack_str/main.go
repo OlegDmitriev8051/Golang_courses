@@ -4,6 +4,8 @@ package main
 
 import (
 	"fmt"
+
+	. "github.com/OTUS/unpack_str/functions"
 )
 
 func main() {
