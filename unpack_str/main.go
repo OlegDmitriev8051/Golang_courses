@@ -3,7 +3,6 @@ package main
 //package hw_1
 
 import (
-	"./unpack_str/functions"
 	"fmt"
 )
 
